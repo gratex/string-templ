@@ -154,7 +154,7 @@ describe("Verify reformat function", function() {
                 });
         }
 
-        console.log(substitute("${some test}---", { "some test": 102 }));
+        //console.log(substitute("${some test}---", { "some test": 102 }));
 
         assert.equal(extractor.reformat({ throws: true },
                 "${right} ${id} ${some-number}",

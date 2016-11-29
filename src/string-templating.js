@@ -18,7 +18,7 @@ function parse(option, template, mstring) {
 
     var extractedValues = newRegexFrmTpl.exec(mstring);
     if (!extractedValues || extractedValues.length === 0) {
-        console.log(newRegexFrmTpl);
+
         if (option && option.throws) {
 
             throw Error("Your input string does not match with the template");
