@@ -1,4 +1,5 @@
-# string-template-extractor
+# string-templ (pka string-template-extractor)
+
 #### A reverse version of string substitution from dojo string
 
 ### Usage
