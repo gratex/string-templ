@@ -1,7 +1,7 @@
 {
-  "name": "string-template-extractor",
-  "version": "4.0.0",
-  "description": "A reverse version of dojo string substitution",
+  "name": "string-templ",
+  "version": "0.0.1",
+  "description": "A reverse version of dojo string substitution and some related string manipulation functions",
   "main": "src/index.js",
   "scripts": {
     "nsp": "npm shrinkwrap --dev && nsp check",
