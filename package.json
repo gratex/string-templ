@@ -13,7 +13,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "string-templ": "./src/cli.js"
+    "string-templ": "./bin/string-templ.js"
   },
   "repository": {
     "type": "git",
