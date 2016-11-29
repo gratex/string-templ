@@ -4,7 +4,7 @@
 ### Usage
 
 ``` javascript
-var extractor = require("string-template-extractor"); //throwable is true
+var extractor = require("string-templ"); //throwable is true
 
 var option = {throws: true};
 
@@ -32,7 +32,11 @@ extractor.parse(option)(template)(sampleString); // curry function
 ### Installation
 In your project path:
 
-	$ npm install string-template-extractor
+	$ npm install string-templ
 
 ### Test
 	$ npm test
+
+### CLI (bin)
+
+	string-templ	
