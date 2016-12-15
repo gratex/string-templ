@@ -39,7 +39,6 @@ program.args.forEach(function(element, index) {
     if (--couter === 0) { process.exit(0); }
 });
 
-console.log("heres");
 // Process with pipeline
 var byline = require("byline");
 byline(process.stdin /*,{keepEmptyLines:true}*/ ) //
