@@ -8,6 +8,11 @@ describe("Verify reformat function", function() {
         assert.equal(r, "me-test");
     });
 
+    it("Should be able to reformat string #2 with full match", function() {
+        var r = extractor.reformat({}, "${1} and ${2}", "${2} scares ${1} (${0} tales)", "dog and cat");
+        assert.equal(r, "cat scares dog (dog and cat tales)");
+    });
+
     it.skip("motivation - ES6 replace version", function() {
         // explains the motivaton
         // this is how you would write it in pure ES

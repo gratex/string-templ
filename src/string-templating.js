@@ -34,8 +34,16 @@ function reformat(option, oldTempl, newTempl, inputString) {
     if (typeof option === "string") {
         throw new Error("option should not be string");
     }
-    return substitute(newTempl, parse(option, oldTempl, inputString));
+    var map = parse(option, oldTempl, inputString);
+    return substitute(newTempl, addFullMatchValue(map, inputString));
+}
 
+// @Util
+// Add input string to parsed map of key-values for full match.
+function addFullMatchValue(map, str) {
+    var fullMatchPattern = '0';
+    map && (map[fullMatchPattern] = str);
+    return map;
 }
 
 // @Util
