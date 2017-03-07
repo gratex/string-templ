@@ -2,11 +2,11 @@
 function parse(option, template, mstring) {
     var keys = [];
     var placeholderPattern = '.*?';
-    template = escapeRegExp(template) + "$";
+    var escapedTemplate = escapeRegExp(template) + "$";
     var findKeyRegex = /\\\$\\\{([^\\\s\\\:\\\}]*)(?:\\\:([^\\\s\\\:\\\}]+))?\\\}/g;
 
     // Generate new regex and keep the keys from template
-    var newRegexFrmTpl = new RegExp(template.replace(findKeyRegex, function(match, key) {
+    var newRegexFrmTpl = new RegExp(escapedTemplate.replace(findKeyRegex, function(match, key) {
         keys.push(key);
         var foo = (option[key]) || placeholderPattern;
         return `(${foo})`;
@@ -20,8 +20,7 @@ function parse(option, template, mstring) {
     if (!extractedValues || extractedValues.length === 0) {
 
         if (option && option.throws) {
-
-            throw Error("Your input string does not match with the template");
+            throw Error(`Your input string "${mstring}" does not match with the template "${template}"`);
         } else {
             return null;
         }
