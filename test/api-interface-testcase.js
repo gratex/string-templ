@@ -33,6 +33,22 @@ describe("Verify API interface function", function() {
         );
     });
 
+    it("Should return ERROR with detailed information about input string and template", function() {
+        var sampleString = "hungton12456@localhost"; //missing / charater
+        var template = "${username}/${password}@{server}"; //missing ${server}
+        assert.throws(
+            function() {
+                extractor({ throws: true }, template, sampleString);
+            },
+            function(err) {
+                var errMsg = err.message;
+                if (errMsg.includes(sampleString) && errMsg.includes(template)) {
+                    return true;
+                }
+            }
+        );
+    });
+
     it("Should return NULL with INVALID input template and throwable is FALSE", function() {
         var template = "${username}/${password}@{server}"; //missing ${server}
         var expectedValue = null;
